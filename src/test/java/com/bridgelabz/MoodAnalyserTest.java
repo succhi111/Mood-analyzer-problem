@@ -1,12 +1,11 @@
 package com.bridgelabz;
 
-
 import org.junit.Assert;
 import org.junit.Test;
 
 public class MoodAnalyserTest {
 
-   @Test
+    @Test
     public void givenMessage_WhenProper_ShouldReturnSad() throws MoodAnalyserException {
         MoodAnalyser moodAnalyser = new MoodAnalyser("I am in sad mood");
         String sadMood = moodAnalyser.analyseMood();
@@ -20,6 +19,13 @@ public class MoodAnalyserTest {
         String happyMood = moodAnalyser.analyseMood();
         System.out.println(happyMood);
         Assert.assertEquals("HAPPY", happyMood);
+    }
 
+  @Test
+    public void givenMessage_WhenProper_ShouldReturnNull() throws MoodAnalyserException {
+        MoodAnalyser moodAnalyser = new MoodAnalyser(null);
+        String nullMood = moodAnalyser.analyseMood();
+        System.out.println(nullMood);
+        Assert.assertEquals("HAPPY", nullMood);
     }
 }
